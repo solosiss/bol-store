@@ -1,0 +1,266 @@
+/* ==========================================================
+   BOL Store - Hoja de estilos
+   DSY1104 - Desarrollo Fullstack II
+   Esta hoja se enlaza de forma externa en todas las paginas.
+   ========================================================== */
+
+/* --- Estilos generales --- */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #222222;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  border-bottom: 2px solid #d94f30;
+  padding-bottom: 5px;
+}
+
+h3 {
+  font-size: 17px;
+  margin: 0 0 8px 0;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+a {
+  color: #d94f30;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Contenedor central de todas las paginas */
+.contenedor {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* --- Encabezado y menu de navegacion --- */
+
+#encabezado {
+  background-color: #222222;
+  color: #ffffff;
+  padding: 15px 0;
+}
+
+#logo {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#menu {
+  list-style: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+#menu li {
+  display: inline;
+  margin-right: 15px;
+}
+
+#menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#menu li a:hover {
+  color: #d94f30;
+  text-decoration: underline;
+}
+
+#carrito-caja {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+#carrito-caja a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Barra con los enlaces de sesion */
+#barra-sesion {
+  background-color: #e0e0e0;
+  padding: 8px 0;
+  font-size: 13px;
+  text-align: right;
+}
+
+/* --- Seccion de bienvenida (banner) --- */
+
+#banner {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#banner-texto {
+  margin-bottom: 15px;
+}
+
+/* --- Botones --- */
+
+.boton {
+  display: inline-block;
+  background-color: #d94f30;
+  color: #ffffff;
+  padding: 10px 18px;
+  border: none;
+  text-decoration: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.boton:hover {
+  background-color: #b03d23;
+  color: #ffffff;
+}
+
+/* --- Listado de productos --- */
+
+.seccion {
+  margin-top: 30px;
+}
+
+.producto {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.producto img {
+  border: 1px solid #dddddd;
+}
+
+.producto h3 {
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+.producto .categoria {
+  color: #777777;
+  font-size: 13px;
+}
+
+.producto .precio {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.agotado {
+  color: #cc0000;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* --- Bloque de informacion de la tienda --- */
+
+#info-tienda {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+}
+
+#info-tienda ul {
+  margin: 0 0 15px 0;
+  padding-left: 20px;
+}
+
+/* --- Video --- */
+
+#video iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px solid #cccccc;
+}
+
+/* --- Pie de pagina --- */
+
+#pie {
+  background-color: #222222;
+  color: #ffffff;
+  margin-top: 40px;
+  padding: 25px 0 15px 0;
+}
+
+#pie h3 {
+  color: #d94f30;
+  font-size: 15px;
+}
+
+#pie ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+#pie ul li {
+  margin-bottom: 5px;
+}
+
+#pie a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#pie a:hover {
+  text-decoration: underline;
+}
+
+#pie-legal {
+  border-top: 1px solid #555555;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+/* Formulario del pie */
+#form-newsletter input {
+  padding: 8px;
+  border: 1px solid #999999;
+  width: 60%;
+}
+
+/* --- Pantallas pequenas --- */
+
+@media (max-width: 600px) {
+  #menu li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  #video iframe {
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
