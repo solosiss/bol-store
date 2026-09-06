@@ -30,9 +30,9 @@ Abrir index.html con el navegador, o usar la extension Live Server de VS Code.
 
 | Nombre | Tarea |
 | --- | --- |
-| (nombre) | Paginas de la tienda |
-| (nombre) | Vista administrador |
-| (nombre) | Validaciones JavaScript |
+| (Tomás Salas) | Paginas de la tienda |
+| (Tomás Salas) | Vista administrador |
+| (Tomás Salas) | Validaciones JavaScript |
 
 ## Avance
 
