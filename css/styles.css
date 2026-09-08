@@ -178,6 +178,232 @@ img {
   font-weight: bold;
 }
 
+/* --- Filtros de categoria --- */
+
+#filtros {
+  margin-bottom: 20px;
+}
+
+.filtro {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  color: #222222;
+  padding: 6px 14px;
+  margin: 0 5px 5px 0;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.filtro:hover {
+  background-color: #eeeeee;
+  color: #222222;
+}
+
+.filtro-activo {
+  background-color: #d94f30;
+  border: 1px solid #d94f30;
+  color: #ffffff;
+}
+
+.filtro-activo:hover {
+  background-color: #d94f30;
+  color: #ffffff;
+}
+
+/* --- Detalle del producto --- */
+
+#migas {
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+#imagen-detalle {
+  border: 1px solid #cccccc;
+  background-color: #ffffff;
+  width: 100%;
+  height: auto;
+}
+
+#ficha {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+}
+
+.precio-detalle {
+  font-size: 26px;
+  font-weight: bold;
+  color: #d94f30;
+  margin: 10px 0;
+}
+
+#tabla-caracteristicas {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+#tabla-caracteristicas td {
+  border-bottom: 1px solid #dddddd;
+  padding: 7px 5px;
+}
+
+#tabla-caracteristicas td:first-child {
+  color: #777777;
+  width: 40%;
+}
+
+.aviso-stock {
+  color: #b06000;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#cantidad {
+  width: 70px;
+  padding: 6px;
+  border: 1px solid #999999;
+}
+
+/* --- Carrito de compras --- */
+
+.carrito-vacio {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 30px;
+  text-align: center;
+}
+
+.linea-carrito {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.linea-carrito img {
+  border: 1px solid #dddddd;
+  width: 100%;
+  height: auto;
+}
+
+.linea-carrito h3 {
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+
+.control-cantidad {
+  margin-bottom: 8px;
+}
+
+.control-cantidad button {
+  background-color: #eeeeee;
+  border: 1px solid #999999;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.control-cantidad button:hover {
+  background-color: #dddddd;
+}
+
+.control-cantidad span {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.boton-eliminar {
+  background-color: #ffffff;
+  border: 1px solid #cc0000;
+  color: #cc0000;
+  padding: 4px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.boton-eliminar:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+#resumen {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+}
+
+.tabla-resumen {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.tabla-resumen td {
+  border-bottom: 1px solid #dddddd;
+  padding: 8px 3px;
+}
+
+.tabla-resumen td:last-child {
+  text-align: right;
+}
+
+.fila-descuento td {
+  color: #2e7d32;
+}
+
+.fila-total td {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: none;
+  border-top: 2px solid #222222;
+  padding-top: 12px;
+}
+
+.aviso-envio {
+  background-color: #fff4e0;
+  border: 1px solid #e0c080;
+  padding: 8px;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+#cupon {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #999999;
+  margin: 5px 0 10px 0;
+}
+
+.boton-bloque {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #666666;
+}
+
+.boton-bloque:hover {
+  background-color: #444444;
+}
+
+.boton-pagar {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  background-color: #2e7d32;
+}
+
+.boton-pagar:hover {
+  background-color: #1f5c23;
+}
+
 /* --- Bloque de informacion de la tienda --- */
 
 #info-tienda {
