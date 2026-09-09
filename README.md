@@ -2,10 +2,6 @@
 
 Tienda online de ropa urbana desarrollada con HTML, CSS y JavaScript.
 
-Proyecto de la asignatura **DSY1104 - Desarrollo Fullstack II**, Escuela de
-Informatica y Telecomunicaciones, Duoc UC. Corresponde a la Evaluacion Parcial 1
-(30% de la asignatura).
-
 ---
 
 ## Descripcion
@@ -65,22 +61,6 @@ bol-store/
 
 ---
 
-## Como ejecutar el proyecto
-
-1. Clonar el repositorio:
-
-   ```
-   git clone https://github.com/solosiss/bol-store.git
-   ```
-
-2. Abrir `index.html` con el navegador.
-
-Tambien se puede abrir la carpeta en Visual Studio Code y usar la extension
-**Live Server**, que recarga la pagina sola cada vez que se guarda un archivo.
-
-**Sitio publicado:** https://solosiss.github.io/bol-store/
-
----
 
 ## Paginas del sitio
 
@@ -177,16 +157,6 @@ Resumen de las reglas de negocio que deben cumplir los formularios.
 
 ---
 
-## Integrantes y distribucion de tareas
-
-| Integrante | Responsabilidad |
-| --- | --- |
-| (nombre) | Paginas de la tienda y hoja de estilos |
-| (nombre) | Vista administrador y mantenedores |
-| (nombre) | Validaciones con JavaScript y carrito |
-
----
-
 ## Como trabajamos con Git
 
 Cada integrante trabaja en su propia rama y luego integra los cambios a `main`.
@@ -210,23 +180,6 @@ No se suben cambios sin mensaje o con mensajes como "cambios" o "arreglos".
 
 ---
 
-## Avance de la entrega 1
-
-- [x] Estructura del repositorio y README
-- [x] Hoja de estilos externa
-- [x] Arreglo de productos en JavaScript
-- [x] Carrito de compras con localStorage
-- [x] Pagina principal con banner, productos, video y footer
-- [x] Paginas de productos y detalle de producto
-- [x] Paginas de nosotros, blogs y detalle de blogs
-- [x] Formularios de registro, login y contacto
-- [x] Pagina del carrito de compras
-- [x] Vista del administrador
-- [x] Validaciones con JavaScript
-- [ ] Documento ERS version 1
-- [x] Publicacion en GitHub Pages
-
----
 
 ## Pendientes conocidos
 
