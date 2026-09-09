@@ -559,4 +559,15 @@ window.onload = function () {
   mostrarDetalle();
   mostrarCarrito();
   mostrarContador();
+
+  // Solo se ejecuta en la pagina de registro, que es donde
+  // existe la lista de regiones
+  if (typeof cargarRegiones == "function") {
+    cargarRegiones();
+  }
+
+  // Solo se ejecuta en las paginas del administrador
+  if (typeof iniciarAdmin == "function") {
+    iniciarAdmin();
+  }
 };
