@@ -28,7 +28,7 @@ var productos = [
     stockCritico: 6,
     imagen: "img/productos/pol-002.jpg",
     destacado: true,
-    descripcion: "Polera de corte ancho, hombro caido y largo extendido. Llevala al gym aloserio.",
+    descripcion: "Polera de corte ancho, hombro caido y largo extendido. Llevala al ignacio aloserio.",
     talla: "M / L / XL / XXL",
     material: "Algodon organico",
     detalle: "Hombro caido, largo extendido"
@@ -42,7 +42,7 @@ var productos = [
     stockCritico: 4,
     imagen: "img/productos/plr-001.jpg",
     destacado: true,
-    descripcion: "Un tech xxxxs pal corte. Capucha forrada y bolsillo canguro.",
+    descripcion: "Un tech xxxxs pal corte.",
     talla: "S / M / L / XL",
     material: "80% poliester 20% algodon",
     detalle: "Sin cierre, calce por la cabeza"
@@ -56,23 +56,23 @@ var productos = [
     stockCritico: 4,
     imagen: "img/productos/plr-002.jpg",
     destacado: false,
-    descripcion: "Feo pero abriga. Cierre completo y bolsillos laterales.",
+    descripcion: "Feo pero abriga. no lo compre",
     talla: "S / M / L / XL",
-    material: "Algodon french terry",
+    material: "Algodon black guy",
     detalle: "Cierre completo, dos bolsillos"
   },
   {
     codigo: "JOC-001",
-    nombre: "Jockey Cuchi",
+    nombre: "Jockey Gusi",
     categoria: "Jockeys",
     precio: 12990,
     stock: 41,
     stockCritico: 8,
     imagen: "img/productos/joc-001.jpg",
     destacado: true,
-    descripcion: "El diablo, que maldito gorro. Seis paneles con bordado frontal.",
+    descripcion: "El diablo, que maldito gorro. es es gusi.",
     talla: "Unica ajustable",
-    material: "Sarga de algodon",
+    material: "Kisaso",
     detalle: "Visera curva, correa metalica"
   },
   {
@@ -91,30 +91,30 @@ var productos = [
   },
   {
     codigo: "ZAP-001",
-    nombre: "Zapatilla Ricky Owings",
+    nombre: "Zapatilla Ricowen",
     categoria: "Zapatillas",
     precio: 54990,
     stock: 12,
     stockCritico: 3,
     imagen: "img/productos/zap-001.jpg",
     destacado: true,
-    descripcion: "Con estas te elevai el ki. Cana alta y suela gruesa.",
+    descripcion: "Con estas te elevai el ki.",
     talla: "38 / 39 / 40 / 41 / 42 / 43",
-    material: "Lona encerada",
+    material: "AURA",
     detalle: "Suela de goma vulcanizada"
   },
   {
     codigo: "CAR-001",
-    nombre: "Cargo aura certero",
+    nombre: "Cargo milico",
     categoria: "Cargos",
     precio: 44990,
     stock: 15,
     stockCritico: 4,
     imagen: "img/productos/car-001.jpg",
     destacado: false,
-    descripcion: "Mas 100 de aura y tal. Seis bolsillos y ruedo ajustable.",
+    descripcion: "Mas 100 de aura y tal.",
     talla: "38 / 40 / 42 / 44 / 46",
-    material: "Gabardina de algodon",
+    material: "Niños",
     detalle: "Seis bolsillos, ruedo con cordon"
   }
 ];
