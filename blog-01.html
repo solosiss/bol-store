@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como se estampa una polera - BOL Store</title>
+
+  <!-- Bootstrap: se usa solo para la grilla de columnas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Hoja de estilos propia. Va despues de Bootstrap para poder cambiarlo -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= ENCABEZADO ================= -->
+  <header id="encabezado">
+    <div class="contenedor">
+
+      <a id="logo" href="index.html">BOL STORE</a>
+
+      <nav>
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div id="carrito-caja">
+        <a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Enlaces de sesion -->
+  <div id="barra-sesion">
+    <div class="contenedor">
+      <a href="login.html">Iniciar sesion</a> |
+      <a href="registro.html">Registrar usuario</a>
+    </div>
+  </div>
+
+  <!-- ================= CONTENIDO ================= -->
+  <main>
+    <div class="contenedor">
+
+      <p id="migas">
+        <a href="index.html">Home</a> &gt;
+        <a href="blogs.html">Blogs</a> &gt;
+        <span>Como se estampa una polera</span>
+      </p>
+
+      <article class="seccion">
+        <h2>Como se estampa una polera</h2>
+        <p class="categoria">Publicado el 8 de septiembre de 2026</p>
+
+        <img class="imagen-blog" src="img/blog/blog-01.jpg" alt="Proceso de serigrafia textil" width="700" height="450">
+
+        <p>
+          La serigrafia es una tecnica de impresion que consiste en pasar tinta a
+          traves de una malla tensada en un marco. Las zonas que no deben imprimirse
+          se bloquean con una emulsion sensible a la luz, y la tinta solo atraviesa
+          por donde el diseno lo permite.
+        </p>
+
+        <h3>Paso a paso</h3>
+        <p>
+          Primero se prepara la matriz. La malla se cubre con emulsion en un cuarto
+          oscuro y se deja secar. Encima se pone el diseno impreso en un acetato y se
+          expone a una luz fuerte. La emulsion se endurece donde le llega la luz, y en
+          las zonas tapadas por el diseno queda blanda. Al lavar la malla con agua,
+          esas zonas se abren y forman el molde.
+        </p>
+        <p>
+          Despues viene la impresion. La malla se apoya sobre la prenda, se pone tinta
+          en un extremo y se arrastra con una regla de goma llamada racleta. La tinta
+          pasa solo por las zonas abiertas y queda sobre la tela.
+        </p>
+        <p>
+          Por ultimo se cura la tinta. La prenda pasa por un tunel de calor a unos 160
+          grados durante un par de minutos, para que la tinta se fije y no se salga al
+          lavarla. Si este paso se hace mal, el estampado se agrieta a los pocos lavados.
+        </p>
+
+        <h3>Por que usamos un color por diseno</h3>
+        <p>
+          Cada color necesita su propia malla y su propia pasada. Un estampado de cuatro
+          colores significa cuatro matrices, cuatro pasadas y un registro perfecto entre
+          ellas. En tiradas chicas como las nuestras eso encarece mucho la prenda, asi
+          que la mayoria de nuestros disenos usan uno o dos colores.
+        </p>
+
+        <p><a class="boton" href="blogs.html">Volver a los blogs</a></p>
+      </article>
+
+    </div>
+  </main>
+
+  <!-- ================= PIE DE PAGINA ================= -->
+  <footer id="pie">
+    <div class="contenedor">
+      <div class="row">
+
+        <div class="col-md-4">
+          <h3>BOL STORE</h3>
+          <p>Tienda de ropa urbana. Proyecto de la asignatura DSY1104, Duoc UC.</p>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Paginas</h3>
+          <ul>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="blogs.html">Blogs</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4">
+          <h3>Novedades</h3>
+          <p>Deja tu correo para recibir avisos.</p>
+          <form id="form-newsletter">
+            <label for="correo">Correo:</label><br>
+            <input type="email" id="correo" name="correo" maxlength="100">
+            <br><br>
+            <button class="boton" type="submit">Suscribir</button>
+          </form>
+        </div>
+
+      </div>
+
+      <div id="pie-legal">
+        <p>2026 BOL Store - Todos los derechos reservados. Sitio con fines academicos.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/productos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
