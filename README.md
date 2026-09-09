@@ -179,9 +179,3 @@ por ejemplo:
 No se suben cambios sin mensaje o con mensajes como "cambios" o "arreglos".
 
 ---
-
-
-## Pendientes conocidos
-
-- Reemplazar las imagenes de prueba por fotos reales de los productos
-- Cambiar el codigo del video de YouTube por uno del equipo
