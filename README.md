@@ -92,6 +92,7 @@ Tambien se puede abrir la carpeta en Visual Studio Code y usar la extension
 | Productos | `productos.html` | Listo |
 | Detalle de producto | `detalle-producto.html` | Listo |
 | Carrito de compras | `carrito.html` | Listo |
+| Compra exitosa | `compra-exitosa.html` | Listo |
 | Registro de usuario | `registro.html` | Listo |
 | Inicio de sesion | `login.html` | Listo |
 | Nosotros | `nosotros.html` | Listo |
@@ -171,6 +172,8 @@ Resumen de las reglas de negocio que deben cumplir los formularios.
 - Cupon `BOL10`: descuenta un 10% del total de los productos
 - Cupon `BOL5000`: descuenta $5.000 en compras sobre $50.000
 - El cupon aplicado tambien se guarda en `localStorage`
+- Al pagar se guarda el pedido en `localStorage` y se vacia el carrito
+- Todos los avisos se escriben en la pagina, no con ventanas emergentes
 
 ---
 
@@ -229,4 +232,3 @@ No se suben cambios sin mensaje o con mensajes como "cambios" o "arreglos".
 
 - Reemplazar las imagenes de prueba por fotos reales de los productos
 - Cambiar el codigo del video de YouTube por uno del equipo
-- Cambiar los `alert()` del carrito por mensajes escritos en la pagina
