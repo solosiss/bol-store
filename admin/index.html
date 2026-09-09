@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de administracion - BOL Store</title>
+
+  <!-- Bootstrap: se usa solo para la grilla de columnas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- Hoja de estilos propia. Va despues de Bootstrap para poder cambiarlo -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body>
+
+  <!-- ================= PANEL DEL ADMINISTRADOR ================= -->
+  <div id="admin-contenedor">
+
+    <!-- Menu lateral -->
+    <aside id="menu-admin">
+      <a id="logo-admin" href="index.html">BOL STORE</a>
+      <p class="rol-caja">Conectado como <strong id="rol-actual">Administrador</strong></p>
+
+      <nav>
+        <ul>
+          <li><a href="index.html" class="activo">Inicio</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li class="solo-admin"><a href="nuevo-producto.html">Nuevo producto</a></li>
+          <li class="solo-admin"><a href="usuarios.html">Usuarios</a></li>
+          <li class="solo-admin"><a href="nuevo-usuario.html">Nuevo usuario</a></li>
+        </ul>
+      </nav>
+
+      <div class="menu-admin-pie">
+        <label for="selector-rol">Probar como:</label>
+        <select id="selector-rol" onchange="cambiarRol()">
+          <option value="Administrador">Administrador</option>
+          <option value="Vendedor">Vendedor</option>
+        </select>
+        <a href="../index.html">Volver a la tienda</a>
+      </div>
+    </aside>
+
+    <!-- Contenido -->
+    <main id="contenido-admin">
+      <h1>Hola, administrador</h1>
+      <p>Resumen del estado de la tienda.</p>
+
+      <div class="row" id="resumen-admin"></div>
+
+      <section class="panel">
+        <h2>Inventario</h2>
+        <p>Valor total del inventario: <strong id="valor-inventario">-</strong></p>
+        <p>
+          El valor se calcula multiplicando el precio de cada producto por su
+          stock disponible.
+        </p>
+        <a class="boton" href="productos.html">Ver productos</a>
+      </section>
+
+      <section class="panel solo-admin">
+        <h2>Accesos rapidos</h2>
+        <ul>
+          <li><a href="nuevo-producto.html">Crear un producto nuevo</a></li>
+          <li><a href="nuevo-usuario.html">Crear un usuario nuevo</a></li>
+          <li><a href="usuarios.html">Ver el listado de usuarios</a></li>
+        </ul>
+      </section>
+
+      <section class="panel">
+        <h2>Roles del sistema</h2>
+        <table class="tabla-admin">
+          <thead><tr><th>Rol</th><th>Permisos</th></tr></thead>
+          <tbody>
+            <tr><td>Administrador</td><td>Acceso total al sistema</td></tr>
+            <tr><td>Vendedor</td><td>Solo ve el listado y el detalle de productos</td></tr>
+            <tr><td>Cliente</td><td>Solo accede a la tienda</td></tr>
+          </tbody>
+        </table>
+        <p class="ayuda">
+          Usa el selector del menu lateral para ver como cambia el panel segun el rol.
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+  <script src="../js/productos.js"></script>
+  <script src="../js/usuarios.js"></script>
+  <script src="../js/regiones.js"></script>
+  <script src="../js/validaciones.js"></script>
+  <script src="../js/admin.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
