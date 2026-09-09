@@ -404,6 +404,376 @@ img {
   background-color: #1f5c23;
 }
 
+/* --- Blogs y equipo --- */
+
+.blog-item {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.blog-item img {
+  border: 1px solid #dddddd;
+  width: 100%;
+  height: auto;
+}
+
+.blog-item h3 {
+  font-size: 20px;
+}
+
+.imagen-blog {
+  border: 1px solid #cccccc;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.tarjeta-equipo {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-top: 4px solid #d94f30;
+  padding: 20px;
+}
+
+/* --- Formularios y validaciones --- */
+
+.caja-formulario {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 25px;
+}
+
+.campo {
+  margin-bottom: 18px;
+}
+
+.campo label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #999999;
+  background-color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+.campo textarea {
+  resize: vertical;
+}
+
+/* Borde de color segun el resultado de la validacion */
+.campo-malo {
+  border: 2px solid #cc0000;
+  background-color: #fff5f5;
+}
+
+.campo-bueno {
+  border: 2px solid #2e7d32;
+}
+
+/* Texto de ayuda bajo el campo */
+.ayuda {
+  display: block;
+  color: #777777;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+/* Mensaje de error personalizado */
+.mensaje-error {
+  display: block;
+  color: #cc0000;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.mensaje-exito {
+  display: block;
+  color: #2e7d32;
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+#aviso-formulario {
+  margin-top: 12px;
+}
+
+.boton-ancho {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.pie-formulario {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+/* ==========================================================
+   PANEL DEL ADMINISTRADOR
+   Menu vertical a la izquierda y contenido al centro.
+   ========================================================== */
+
+#admin-contenedor {
+  display: flex;
+  min-height: 100vh;
+}
+
+#menu-admin {
+  width: 230px;
+  flex-shrink: 0;
+  background-color: #222222;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+#logo-admin {
+  display: block;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 20px 15px 20px;
+  border-bottom: 1px solid #444444;
+}
+
+.rol-caja {
+  font-size: 12px;
+  color: #aaaaaa;
+  padding: 12px 20px;
+  margin: 0;
+}
+
+.rol-caja strong {
+  color: #d94f30;
+}
+
+#menu-admin nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu-admin nav ul li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 11px 20px;
+  font-size: 14px;
+  border-left: 4px solid transparent;
+}
+
+#menu-admin nav ul li a:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+#menu-admin nav ul li a.activo {
+  background-color: #333333;
+  border-left: 4px solid #d94f30;
+  color: #d94f30;
+}
+
+.menu-admin-pie {
+  margin-top: 30px;
+  padding: 15px 20px 0 20px;
+  border-top: 1px solid #444444;
+  font-size: 13px;
+}
+
+.menu-admin-pie label {
+  display: block;
+  color: #aaaaaa;
+  margin-bottom: 4px;
+}
+
+.menu-admin-pie select {
+  width: 100%;
+  padding: 6px;
+  margin-bottom: 12px;
+  border: 1px solid #666666;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.menu-admin-pie a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.menu-admin-pie a:hover {
+  color: #d94f30;
+}
+
+#contenido-admin {
+  flex-grow: 1;
+  padding: 25px 30px;
+  min-width: 0;
+}
+
+#contenido-admin h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.panel {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.panel h2 {
+  font-size: 19px;
+}
+
+/* Tarjetas con numeros del resumen */
+.tarjeta-dato {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-top: 4px solid #d94f30;
+  padding: 15px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: #777777;
+}
+
+.tarjeta-dato .numero {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  color: #222222;
+}
+
+/* Tablas de los mantenedores */
+.tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-admin th {
+  background-color: #eeeeee;
+  border-bottom: 2px solid #cccccc;
+  padding: 10px 8px;
+  text-align: left;
+}
+
+.tabla-admin td {
+  border-bottom: 1px solid #dddddd;
+  padding: 9px 8px;
+}
+
+.tabla-admin tr:hover td {
+  background-color: #fafafa;
+}
+
+/* Etiquetas de estado dentro de las tablas */
+.etiqueta {
+  display: inline-block;
+  padding: 3px 8px;
+  font-size: 12px;
+  border: 1px solid;
+}
+
+.etiqueta-ok {
+  color: #2e7d32;
+  border-color: #2e7d32;
+}
+
+.etiqueta-alerta {
+  color: #b06000;
+  border-color: #b06000;
+}
+
+.etiqueta-malo {
+  color: #cc0000;
+  border-color: #cc0000;
+}
+
+.etiqueta-rol {
+  color: #222222;
+  border-color: #999999;
+}
+
+.boton-tabla {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  color: #222222;
+  padding: 3px 9px;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.boton-tabla:hover {
+  background-color: #eeeeee;
+  color: #222222;
+}
+
+.boton-borrar {
+  border-color: #cc0000;
+  color: #cc0000;
+}
+
+.boton-borrar:hover {
+  background-color: #cc0000;
+  color: #ffffff;
+}
+
+.boton-gris {
+  background-color: #777777;
+}
+
+.boton-gris:hover {
+  background-color: #555555;
+}
+
+.imagen-actual img {
+  width: 140px;
+  height: auto;
+  border: 1px solid #cccccc;
+  margin-bottom: 15px;
+}
+
+/* El panel en pantallas chicas: el menu pasa arriba */
+@media (max-width: 768px) {
+  #admin-contenedor {
+    display: block;
+  }
+
+  #menu-admin {
+    width: 100%;
+  }
+
+  #menu-admin nav ul li {
+    display: inline-block;
+  }
+
+  #contenido-admin {
+    padding: 20px 15px;
+  }
+
+  .tabla-admin {
+    font-size: 12px;
+  }
+}
+
 /* --- Bloque de informacion de la tienda --- */
 
 #info-tienda {
