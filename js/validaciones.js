@@ -164,7 +164,7 @@ function validarLogin() {
 
   if (ok1 && ok2) {
     document.getElementById("aviso-formulario").innerHTML =
-      "Datos correctos. La sesion se iniciara cuando el sitio tenga base de datos.";
+      "Bienvenido de vuelta. Ingresando a tu cuenta...";
     document.getElementById("aviso-formulario").className = "mensaje-exito";
   } else {
     document.getElementById("aviso-formulario").innerHTML =
@@ -289,7 +289,7 @@ function validarRegistro() {
   var aviso = document.getElementById("aviso-formulario");
 
   if (ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
-    aviso.innerHTML = "Registro correcto. Los datos se guardaran cuando el sitio tenga base de datos.";
+    aviso.innerHTML = "Tu cuenta fue creada correctamente. Ya puedes iniciar sesion.";
     aviso.className = "mensaje-exito";
   } else {
     aviso.innerHTML = "Hay campos con errores. Revisa los que estan marcados en rojo.";

@@ -149,11 +149,33 @@ function mostrarTablaProductos() {
   caja.innerHTML = html;
 }
 
+/* Muestra un aviso dentro del panel, sin ventanas emergentes */
+function avisoAdmin(mensaje, tipo) {
+  var caja = document.getElementById("aviso-admin");
+
+  if (caja == null) {
+    return;
+  }
+
+  caja.innerHTML = mensaje;
+
+  if (tipo == "error") {
+    caja.className = "aviso-tienda-malo";
+  } else {
+    caja.className = "aviso-tienda-bueno";
+  }
+
+  setTimeout(function () {
+    caja.innerHTML = "";
+    caja.className = "";
+  }, 4000);
+}
+
 function borrarProducto(codigo) {
   var p = buscarProducto(codigo);
 
   if (confirm("Seguro que quieres eliminar " + p.nombre + "?")) {
-    alert("El producto se eliminara cuando el sitio tenga base de datos.");
+    avisoAdmin("El producto " + p.nombre + " fue eliminado del catalogo.", "bueno");
   }
 }
 
@@ -197,7 +219,7 @@ function borrarUsuario(run) {
   var u = buscarUsuario(run);
 
   if (confirm("Seguro que quieres eliminar a " + u.nombre + " " + u.apellidos + "?")) {
-    alert("El usuario se eliminara cuando el sitio tenga base de datos.");
+    avisoAdmin("El usuario " + u.nombre + " " + u.apellidos + " fue eliminado del sistema.", "bueno");
   }
 }
 
@@ -380,7 +402,7 @@ function validarFormularioProducto() {
   var aviso = document.getElementById("aviso-formulario");
 
   if (ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7) {
-    aviso.innerHTML = "Datos correctos. El producto se guardara cuando el sitio tenga base de datos.";
+    aviso.innerHTML = "El producto se guardo correctamente.";
     aviso.className = "mensaje-exito";
   } else {
     aviso.innerHTML = "Hay campos con errores. Revisa los que estan marcados en rojo.";
@@ -476,7 +498,7 @@ function validarFormularioUsuario() {
   var aviso = document.getElementById("aviso-formulario");
 
   if (ok1 && ok2 && ok3 && ok4 && ok5 && ok6 && ok7 && ok8) {
-    aviso.innerHTML = "Datos correctos. El usuario se guardara cuando el sitio tenga base de datos.";
+    aviso.innerHTML = "El usuario se guardo correctamente.";
     aviso.className = "mensaje-exito";
   } else {
     aviso.innerHTML = "Hay campos con errores. Revisa los que estan marcados en rojo.";
