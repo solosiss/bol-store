@@ -92,25 +92,25 @@ Tambien se puede abrir la carpeta en Visual Studio Code y usar la extension
 | Productos | `productos.html` | Listo |
 | Detalle de producto | `detalle-producto.html` | Listo |
 | Carrito de compras | `carrito.html` | Listo |
-| Registro de usuario | `registro.html` | Pendiente |
-| Inicio de sesion | `login.html` | Pendiente |
-| Nosotros | `nosotros.html` | Pendiente |
-| Blogs | `blogs.html` | Pendiente |
-| Detalle blog 1 | `blog-01.html` | Pendiente |
-| Detalle blog 2 | `blog-02.html` | Pendiente |
-| Contacto | `contacto.html` | Pendiente |
+| Registro de usuario | `registro.html` | Listo |
+| Inicio de sesion | `login.html` | Listo |
+| Nosotros | `nosotros.html` | Listo |
+| Blogs | `blogs.html` | Listo |
+| Detalle blog 1 | `blog-01.html` | Listo |
+| Detalle blog 2 | `blog-02.html` | Listo |
+| Contacto | `contacto.html` | Listo |
 
 ### Administrador
 
 | Pagina | Archivo | Estado |
 | --- | --- | --- |
-| Home administrador | `admin/index.html` | Pendiente |
-| Listado de productos | `admin/productos.html` | Pendiente |
-| Nuevo producto | `admin/nuevo-producto.html` | Pendiente |
-| Editar producto | `admin/editar-producto.html` | Pendiente |
-| Listado de usuarios | `admin/usuarios.html` | Pendiente |
-| Nuevo usuario | `admin/nuevo-usuario.html` | Pendiente |
-| Editar usuario | `admin/editar-usuario.html` | Pendiente |
+| Home administrador | `admin/index.html` | Listo |
+| Listado de productos | `admin/productos.html` | Listo |
+| Nuevo producto | `admin/nuevo-producto.html` | Listo |
+| Editar producto | `admin/editar-producto.html` | Listo |
+| Listado de usuarios | `admin/usuarios.html` | Listo |
+| Nuevo usuario | `admin/nuevo-usuario.html` | Listo |
+| Editar usuario | `admin/editar-usuario.html` | Listo |
 
 ---
 
@@ -215,13 +215,13 @@ No se suben cambios sin mensaje o con mensajes como "cambios" o "arreglos".
 - [x] Carrito de compras con localStorage
 - [x] Pagina principal con banner, productos, video y footer
 - [x] Paginas de productos y detalle de producto
-- [ ] Paginas de nosotros, blogs y detalle de blogs
-- [ ] Formularios de registro, login y contacto
+- [x] Paginas de nosotros, blogs y detalle de blogs
+- [x] Formularios de registro, login y contacto
 - [x] Pagina del carrito de compras
-- [ ] Vista del administrador
-- [ ] Validaciones con JavaScript
+- [x] Vista del administrador
+- [x] Validaciones con JavaScript
 - [ ] Documento ERS version 1
-- [ ] Publicacion en GitHub Pages
+- [x] Publicacion en GitHub Pages
 
 ---
 
