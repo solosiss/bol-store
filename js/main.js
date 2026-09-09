@@ -50,6 +50,34 @@ function mostrarContador() {
   }
 }
 
+/* ----- Avisos en pantalla -----
+   Reemplazan las ventanas emergentes del navegador. El mensaje
+   se escribe en la barra que esta al inicio del contenido y
+   desaparece sola despues de unos segundos. */
+
+function mostrarAviso(mensaje, tipo) {
+  var caja = document.getElementById("aviso-tienda");
+
+  if (caja == null) {
+    return;
+  }
+
+  caja.innerHTML = mensaje;
+
+  if (tipo == "error") {
+    caja.className = "aviso-tienda-malo";
+  } else {
+    caja.className = "aviso-tienda-bueno";
+  }
+
+  // setTimeout ejecuta una funcion despues de los milisegundos indicados.
+  // Aqui se usa para borrar el aviso a los 4 segundos.
+  setTimeout(function () {
+    caja.innerHTML = "";
+    caja.className = "";
+  }, 4000);
+}
+
 // Busca un producto en el arreglo segun su codigo
 function buscarProducto(codigo) {
   for (var i = 0; i < productos.length; i++) {
@@ -70,12 +98,12 @@ function agregarAlCarrito(codigo, cantidad) {
   var producto = buscarProducto(codigo);
 
   if (producto == null) {
-    alert("El producto no existe.");
+    mostrarAviso("El producto no existe en el catalogo.", "error");
     return;
   }
 
   if (producto.stock == 0) {
-    alert("Este producto esta sin stock.");
+    mostrarAviso("El producto " + producto.nombre + " esta sin stock.", "error");
     return;
   }
 
@@ -86,7 +114,7 @@ function agregarAlCarrito(codigo, cantidad) {
   for (var i = 0; i < carrito.length; i++) {
     if (carrito[i].codigo == codigo) {
       if (carrito[i].cantidad + cantidad > producto.stock) {
-        alert("Solo quedan " + producto.stock + " unidades de este producto.");
+        mostrarAviso("Solo quedan " + producto.stock + " unidades de " + producto.nombre + ".", "error");
         return;
       }
       carrito[i].cantidad = carrito[i].cantidad + cantidad;
@@ -97,14 +125,14 @@ function agregarAlCarrito(codigo, cantidad) {
   // Si no estaba, se agrega como producto nuevo
   if (encontrado == false) {
     if (cantidad > producto.stock) {
-      alert("Solo quedan " + producto.stock + " unidades de este producto.");
+      mostrarAviso("Solo quedan " + producto.stock + " unidades de " + producto.nombre + ".", "error");
       return;
     }
     carrito.push({ codigo: codigo, cantidad: cantidad });
   }
 
   guardarCarrito(carrito);
-  alert(producto.nombre + " se agrego al carrito.");
+  mostrarAviso(producto.nombre + " se agrego al carrito.", "bueno");
 }
 
 /* ----- Tarjeta de producto ----- */
@@ -283,7 +311,7 @@ function anadirDesdeDetalle(codigo) {
   var cantidad = parseInt(campo.value);
 
   if (isNaN(cantidad) || cantidad < 1) {
-    alert("La cantidad debe ser un numero mayor a cero.");
+    mostrarAviso("La cantidad debe ser un numero mayor a cero.", "error");
     return;
   }
 
@@ -491,7 +519,7 @@ function cambiarCantidad(codigo, cambio) {
       }
 
       if (nueva > producto.stock) {
-        alert("Solo quedan " + producto.stock + " unidades de este producto.");
+        mostrarAviso("Solo quedan " + producto.stock + " unidades de " + producto.nombre + ".", "error");
         return;
       }
 
@@ -519,12 +547,11 @@ function eliminarDelCarrito(codigo) {
 }
 
 function vaciarCarrito() {
-  if (confirm("Seguro que quieres vaciar el carrito?")) {
-    localStorage.removeItem("carrito");
-    localStorage.removeItem("cupon");
-    mostrarContador();
-    mostrarCarrito();
-  }
+  localStorage.removeItem("carrito");
+  localStorage.removeItem("cupon");
+  mostrarContador();
+  mostrarCarrito();
+  mostrarAviso("El carrito quedo vacio.", "bueno");
 }
 
 function aplicarCupon() {
@@ -538,17 +565,134 @@ function aplicarCupon() {
   }
 
   if (codigo != "BOL10" && codigo != "BOL5000") {
-    alert("El cupon ingresado no es valido.");
+    mostrarAviso("El cupon " + codigo + " no es valido. Revisa el codigo e intenta de nuevo.", "error");
     return;
   }
 
   localStorage.setItem("cupon", codigo);
-  alert("Cupon aplicado.");
   mostrarCarrito();
+  mostrarAviso("Cupon " + codigo + " aplicado correctamente.", "bueno");
 }
 
+/*
+  Al pagar se arma un resumen del pedido, se guarda en localStorage
+  y se vacia el carrito. La pagina de compra exitosa lee ese resumen
+  para mostrar el detalle de lo comprado.
+*/
 function pagar() {
-  alert("La compra se procesara en la siguiente entrega del proyecto.");
+  var carrito = obtenerCarrito();
+
+  if (carrito.length == 0) {
+    mostrarAviso("Tu carrito esta vacio. Agrega productos antes de pagar.", "error");
+    return;
+  }
+
+  var lineas = [];
+  var subtotal = 0;
+
+  for (var i = 0; i < carrito.length; i++) {
+    var p = buscarProducto(carrito[i].codigo);
+
+    if (p != null) {
+      var totalLinea = p.precio * carrito[i].cantidad;
+      subtotal = subtotal + totalLinea;
+
+      lineas.push({
+        nombre: p.nombre,
+        cantidad: carrito[i].cantidad,
+        precio: p.precio,
+        total: totalLinea
+      });
+    }
+  }
+
+  var descuento = calcularDescuento(subtotal);
+  var envio = COSTO_ENVIO;
+
+  if (subtotal >= MONTO_ENVIO_GRATIS) {
+    envio = 0;
+  }
+
+  // Numero de pedido a partir de la hora actual, para que no se repita
+  var pedido = {
+    numero: "BOL-" + Date.now(),
+    fecha: new Date().toLocaleDateString("es-CL"),
+    lineas: lineas,
+    subtotal: subtotal,
+    descuento: descuento,
+    cupon: obtenerCupon(),
+    envio: envio,
+    total: subtotal - descuento + envio
+  };
+
+  localStorage.setItem("ultimoPedido", JSON.stringify(pedido));
+
+  // El carrito se vacia porque la compra ya se realizo
+  localStorage.removeItem("carrito");
+  localStorage.removeItem("cupon");
+
+  window.location.href = "compra-exitosa.html";
+}
+
+/* ----- Pagina de compra exitosa ----- */
+
+function mostrarPedido() {
+  var caja = document.getElementById("detalle-pedido");
+
+  if (caja == null) {
+    return;
+  }
+
+  var guardado = localStorage.getItem("ultimoPedido");
+
+  // Si alguien entra directo a la pagina sin haber comprado
+  if (guardado == null) {
+    caja.innerHTML =
+      "<h2>No hay ningun pedido reciente</h2>" +
+      "<p>Todavia no has realizado una compra en esta sesion.</p>" +
+      '<a class="boton" href="productos.html">Ir a los productos</a>';
+    return;
+  }
+
+  var pedido = JSON.parse(guardado);
+  var html = "";
+
+  html = html + '<p class="numero-pedido">Pedido ' + pedido.numero + "</p>";
+  html = html + "<p>Fecha: " + pedido.fecha + "</p>";
+
+  html = html + '<table class="tabla-admin">';
+  html = html + "<thead><tr><th>Producto</th><th>Cantidad</th><th>Precio</th><th>Total</th></tr></thead>";
+  html = html + "<tbody>";
+
+  for (var i = 0; i < pedido.lineas.length; i++) {
+    var l = pedido.lineas[i];
+    html = html + "<tr>";
+    html = html + "<td>" + l.nombre + "</td>";
+    html = html + "<td>" + l.cantidad + "</td>";
+    html = html + "<td>" + formatearPrecio(l.precio) + "</td>";
+    html = html + "<td>" + formatearPrecio(l.total) + "</td>";
+    html = html + "</tr>";
+  }
+
+  html = html + "</tbody></table>";
+
+  html = html + '<table class="tabla-resumen">';
+  html = html + "<tr><td>Productos</td><td>" + formatearPrecio(pedido.subtotal) + "</td></tr>";
+
+  if (pedido.descuento > 0) {
+    html = html + '<tr class="fila-descuento"><td>Descuento (' + pedido.cupon + ")</td><td>-" + formatearPrecio(pedido.descuento) + "</td></tr>";
+  }
+
+  if (pedido.envio == 0) {
+    html = html + "<tr><td>Envio</td><td>Gratis</td></tr>";
+  } else {
+    html = html + "<tr><td>Envio</td><td>" + formatearPrecio(pedido.envio) + "</td></tr>";
+  }
+
+  html = html + '<tr class="fila-total"><td>Total pagado</td><td>' + formatearPrecio(pedido.total) + "</td></tr>";
+  html = html + "</table>";
+
+  caja.innerHTML = html;
 }
 
 /* ----- Se ejecuta cuando la pagina termina de cargar ----- */
@@ -558,6 +702,7 @@ window.onload = function () {
   mostrarTodosLosProductos();
   mostrarDetalle();
   mostrarCarrito();
+  mostrarPedido();
   mostrarContador();
 
   // Solo se ejecuta en la pagina de registro, que es donde
